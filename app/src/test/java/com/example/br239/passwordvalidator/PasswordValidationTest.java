@@ -57,4 +57,14 @@ public class PasswordValidationTest {
     public void lowercaseTest2() throws Exception {
         assertEquals(false, MainActivity.testForLowercase("ALLCAPS"));
     }
+
+    @Test
+    public void specialTest() throws Exception {
+        assertEquals(true, MainActivity.testForSpecial("#password#pleasepass#thankyoufor$$$$"));
+    }
+
+    @Test
+    public void specialTest2() throws Exception {
+        assertEquals(false, MainActivity.testForSpecial("boringAndWeakPassword"));
+    }
 }

@@ -78,4 +78,8 @@ public class MainActivity extends AppCompatActivity {
     public static boolean testForLowercase(String password){
         return !password.equals(password.toUpperCase());
     }
+
+    public static boolean testForSpecial(String password) {
+        return !password.matches("[A-Za-z0-9 ]*");
+    }
 }
