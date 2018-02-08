@@ -27,4 +27,24 @@ public class PasswordValidationTest {
     public void lengthTest2() throws Exception {
         assertEquals(false, MainActivity.testForLength("notlong"));
     }
+
+    @Test
+    public void blankSpaceTest() throws Exception {
+        assertEquals(true, MainActivity.testForBlankSpace("noblankspace"));
+    }
+
+    @Test
+    public void blankSpaceTest2() throws Exception {
+        assertEquals(false, MainActivity.testForBlankSpace("some blank spaces"));
+    }
+
+    @Test
+    public void upperCaseTest() throws Exception {
+        assertEquals(true, MainActivity.testForUppercase("ItHasSomeUpperCases"));
+    }
+
+    @Test
+    public void upperCaseTest2() throws Exception {
+        assertEquals(false, MainActivity.testForUppercase("nouppercases"));
+    }
 }
