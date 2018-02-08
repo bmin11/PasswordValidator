@@ -17,4 +17,14 @@ public class PasswordValidationTest {
     public void stringComparisonTest2() throws Exception {
         assertEquals(false, MainActivity.testForPasswordString("password"));
     }
+
+    @Test
+    public void lengthTest() throws Exception {
+        assertEquals(true, MainActivity.testForLength("averylongpassword"));
+    }
+
+    @Test
+    public void lengthTest2() throws Exception {
+        assertEquals(false, MainActivity.testForLength("notlong"));
+    }
 }
