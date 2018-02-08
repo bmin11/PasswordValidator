@@ -2,16 +2,17 @@ package com.example.br239.passwordvalidator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.*;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int numOfValidation = 2;
+    private static int numOfValidation = 6;
 
     private TextView tvMessage;
     private EditText tbPassword;
-    private Button btValidate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +21,23 @@ public class MainActivity extends AppCompatActivity {
 
         tvMessage = findViewById(R.id.tvMessage);
         tbPassword = findViewById(R.id.tbPassword);
-        btValidate = findViewById(R.id.btValidate);
-        btValidate.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
+
+        tbPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                int result = validatePassword(tbPassword.getText().toString());
+                tvMessage.setText(result + " out of " + numOfValidation);
+
             }
         });
     }
@@ -44,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
             result++;
         }
         if (testForLowercase(password)){
+            result++;
+        }
+        if (testForSpecial(password)){
             result++;
         }
 

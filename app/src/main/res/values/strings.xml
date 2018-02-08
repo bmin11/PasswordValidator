@@ -2,5 +2,4 @@
     <string name="app_name">PasswordValidator</string>
 
     <string name="tvMessage">Hello, user!</string>
-    <string name="btValidate">Validate</string>
 </resources>

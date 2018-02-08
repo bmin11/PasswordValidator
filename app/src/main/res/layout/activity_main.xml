@@ -17,7 +17,10 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="156dp"
-            android:text="@string/tvMessage" />
+            android:text="@string/tvMessage"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/tbPassword"
@@ -29,14 +32,6 @@
             android:inputType="textPersonName"
             android:text="" />
 
-        <Button
-            android:id="@+id/btValidate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tbPassword"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:text="@string/btValidate" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
