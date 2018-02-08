@@ -39,12 +39,22 @@ public class PasswordValidationTest {
     }
 
     @Test
-    public void upperCaseTest() throws Exception {
-        assertEquals(true, MainActivity.testForUppercase("ItHasSomeUpperCases"));
+    public void uppercaseTest() throws Exception {
+        assertEquals(true, MainActivity.testForUppercase("ItHasSomeUppercases"));
     }
 
     @Test
-    public void upperCaseTest2() throws Exception {
+    public void uppercaseTest2() throws Exception {
         assertEquals(false, MainActivity.testForUppercase("nouppercases"));
+    }
+
+    @Test
+    public void lowercaseTest() throws Exception {
+        assertEquals(true, MainActivity.testForLowercase("ItHasSomeLowercases"));
+    }
+
+    @Test
+    public void lowercaseTest2() throws Exception {
+        assertEquals(false, MainActivity.testForLowercase("ALLCAPS"));
     }
 }

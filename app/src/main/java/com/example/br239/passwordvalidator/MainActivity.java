@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         if (testForUppercase(password)){
             result++;
         }
+        if (testForLowercase(password)){
+            result++;
+        }
 
         return result;
     }
@@ -72,4 +75,7 @@ public class MainActivity extends AppCompatActivity {
         return !password.equals(password.toLowerCase());
     }
 
+    public static boolean testForLowercase(String password){
+        return !password.equals(password.toUpperCase());
+    }
 }
