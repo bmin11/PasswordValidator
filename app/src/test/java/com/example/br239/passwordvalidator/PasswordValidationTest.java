@@ -12,4 +12,9 @@ public class PasswordValidationTest {
     public void stringComparisonTest() throws Exception {
         assertEquals(true, MainActivity.testForPasswordString("ranwfpwepf"));
     }
+
+    @Test
+    public void stringComparisonTest2() throws Exception {
+        assertEquals(false, MainActivity.testForPasswordString("password"));
+    }
 }
